@@ -227,10 +227,12 @@ level.
 
 ## Client addon
 
-`ClientAddon/CitySiege` is an optional addon built to match the 3.3.5 default UI. It has three tabs:
-a live **Overview** (stage, countdown, leader health, force counts), a **Battle Map** showing the
-generated route, and a GM **Commands** panel. Copy the `CitySiege` folder into
-`World of Warcraft/Interface/AddOns/` — see [ClientAddon/README.md](ClientAddon/README.md).
+`client/interface/addons/citysiege` is an optional addon built to match the 3.3.5 default UI. It has
+three tabs: a live **Overview** (stage, countdown, leader health, force counts), a **Battle Map**
+showing the generated route, and a GM **Commands** panel. Realms that build a content pack with
+[wowpack](https://github.com/jl178/wowpack) ship it to players automatically (the module has a
+`wowpack.json`); otherwise copy the folder into `World of Warcraft/Interface/AddOns/` — see
+[ClientAddon/README.md](ClientAddon/README.md).
 
 The battle map draws the city on the client's own world-map tiles and places markers with map
 coordinates the server computes through `Map2ZoneCoordinates` — the `WorldMapArea.dbc` lookup the

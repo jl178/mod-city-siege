@@ -13,9 +13,23 @@ and it is not required to take part in a siege.
 
 ## Installation
 
-1. Copy the `CitySiege` folder into `World of Warcraft/Interface/AddOns/`.
+The addon lives in `client/interface/addons/citysiege/` at the root of the module, where
+[wowpack](https://github.com/jl178/wowpack) picks it up (see `wowpack.json`). A realm that builds
+its content pack with wowpack ships the addon to players: Wowee downloads it with the pack, and
+stock-client players get it inside `patch-Z.MPQ`. Nothing needs copying by hand.
+
+Without wowpack:
+
+1. Copy `client/interface/addons/citysiege` into `World of Warcraft/Interface/AddOns/`. The client
+   matches the folder and file names without regard to case, so the lowercase names work as they are.
 2. Restart the client (or `/reload` if it was already running).
 3. Make sure **City Siege** is ticked in the AddOns list at character select.
+
+The addon's name is its folder's name, so saved settings follow the folder: a copy installed earlier
+as `CitySiege` keeps its settings in `CitySiege.lua`, the lowercase folder in `citysiege.lua`.
+
+`Media/` here holds the source art and conversion scripts of the old bundled map images. The addon
+no longer uses them (it draws the client's own world map tiles) and they are not shipped.
 
 The addon ships with everything it needs. Earlier versions listed LibDataBroker-1.1 and LibDBIcon-1.0
 in the `.toc` without shipping them, which silently disabled the minimap button; the button is now
@@ -66,7 +80,7 @@ Settings are stored per character profile in `CitySiegeDB`.
 
 ## Troubleshooting
 
-See [CitySiege/TROUBLESHOOTING.md](CitySiege/TROUBLESHOOTING.md).
+See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
 The most common issue is the addon showing nothing at all: that means the server is not sending
 data. Check that `CitySiege.Addon.Enabled = 1` in `mod_city_siege.conf`, and that a siege is
